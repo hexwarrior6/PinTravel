@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "trip",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ]
+  }
+}

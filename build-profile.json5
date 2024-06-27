@@ -13,7 +13,7 @@
   "modules": [
     {
       "name": "entry",
-      "srcPath": "./entry",
+      "srcPath": "./products/entry",
       "targets": [
         {
           "name": "default",
@@ -22,6 +22,22 @@
           ]
         }
       ]
+    },
+    {
+      "name": "map",
+      "srcPath": "./features/map"
+    },
+    {
+      "name": "settings",
+      "srcPath": "./features/settings"
+    },
+    {
+      "name": "chat",
+      "srcPath": "./features/chat"
+    },
+    {
+      "name": "trip",
+      "srcPath": "./features/trip"
     }
   ]
 }
