@@ -3,9 +3,7 @@ import { ChatMessageClass } from '../model/ChatMessageClass';
 @Preview
 @Component
 export struct ChatMessageList {
-  @State messageList: Array<ChatMessageClass> = [
-    new ChatMessageClass(false, "nihao"), new ChatMessageClass(true, "nihao"),    new ChatMessageClass(false, "nihao"), new ChatMessageClass(true, "nihao"),    new ChatMessageClass(false, "nihao"), new ChatMessageClass(true, "nihao"),    new ChatMessageClass(false, "nihao"), new ChatMessageClass(true, "nihao"),    new ChatMessageClass(false, "nihao"), new ChatMessageClass(true, "nihao"),    new ChatMessageClass(false, "nihao"), new ChatMessageClass(true, "nihao"),    new ChatMessageClass(false, "nihao"), new ChatMessageClass(true, "nihao"),    new ChatMessageClass(false, "nihao"), new ChatMessageClass(true, "nihao"),    new ChatMessageClass(false, "nihao"), new ChatMessageClass(true, "nihao"),    new ChatMessageClass(false, "nihao"), new ChatMessageClass(true, "nihao"),    new ChatMessageClass(false, "nihao"), new ChatMessageClass(true, "nihao"),    new ChatMessageClass(false, "nihao"), new ChatMessageClass(true, "nihao"),
-  ];
+  @Consume messageList: Array<ChatMessageClass>
 
   // aboutToAppear(): void {
   //   this.getTutorialDataFromJSON();

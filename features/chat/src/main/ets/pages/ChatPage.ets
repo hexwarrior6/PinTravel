@@ -1,9 +1,11 @@
+import { ChatMessageClass } from '../model/ChatMessageClass';
 import { ChatMessageList } from '../view/ChatMessageList';
 import { TextBoxBar } from '../view/TextBoxBar';
 
 @Preview
 @Component
 export struct ChatPage {
+  @Provide messageList: Array<ChatMessageClass> = [new ChatMessageClass(false, "nihao")]
   build() {
     Column() {
       Text('Pin📍')

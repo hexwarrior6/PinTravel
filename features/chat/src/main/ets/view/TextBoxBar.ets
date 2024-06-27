@@ -1,6 +1,9 @@
+import { ChatMessageClass } from '../model/ChatMessageClass'
 @Preview
 @Component
 export struct TextBoxBar {
+  @Consume messageList: Array<ChatMessageClass>
+  @Provide chatText: string = ''
   @State text: string = ''
   controller: TextInputController = new TextInputController()
 
@@ -16,12 +19,16 @@ export struct TextBoxBar {
         .fontColor(Color.Black)
         .onChange((value: string) => {
           this.text = value
+          console.log(value)
         })
       Button() {
         Image($r('app.media.paperplane')).width(20).margin(10)
       }
       .type(ButtonType.Circle)
-
+      .onClick(() => {
+        this.messageList.push(new ChatMessageClass(true, this.text))
+        this.text = ''
+      })
     }
     .width('100%')
     .justifyContent(FlexAlign.SpaceAround)
