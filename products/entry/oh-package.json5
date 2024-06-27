@@ -1,15 +1,15 @@
 {
+  "license": "",
+  "devDependencies": {},
+  "author": "",
   "name": "entry",
-  "version": "1.0.0",
   "description": "Please describe the basic information.",
   "main": "",
-  "author": "",
-  "license": "",
+  "version": "1.0.0",
   "dependencies": {
-    "@ohos/chat": "../../features/chat",
     "@ohos/map": "../../features/map",
+    "@ohos/chat": "../../features/chat",
     "@ohos/settings": "../../features/settings",
     "@ohos/trip": "../../features/trip"
   }
 }
-
