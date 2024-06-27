@@ -32,7 +32,6 @@ export struct TextBoxBar {
         this.messageList.push(new ChatMessageClass(true, tempText))
         this.text = ''
         this.messageList.push(new ChatMessageClass(false, await ChatEngine(tempText)))
-        this.messageList.push(new ChatMessageClass(false, "FINISH"))
       })
     }
     .width('100%')
