@@ -1,13 +1,12 @@
 import { ChatMessageList } from '../view/ChatMessageList';
 import { TextBoxBar } from '../view/TextBoxBar';
+
 @Preview
 @Component
 export struct ChatPage {
-  @State message: string = 'Pin📍';
-
   build() {
     Column() {
-      Text(this.message)
+      Text('Pin📍')
         .fontSize(24)
         .fontWeight('700')
         .width('100%')
@@ -16,11 +15,12 @@ export struct ChatPage {
         .fontFamily('HarmonyHeiTi-Bold')
         .lineHeight(33)
       Scroll() {
-          ChatMessageList()
+        ChatMessageList()
       }
       .layoutWeight(1)
       .scrollBar(BarState.Off)
       .align(Alignment.Top)
+
       Row() {
         TextBoxBar()
       }

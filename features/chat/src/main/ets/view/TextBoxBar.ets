@@ -3,8 +3,9 @@
 export struct TextBoxBar {
   @State text: string = ''
   controller: TextInputController = new TextInputController()
+
   build() {
-    Row(){
+    Row() {
       TextInput({ text: this.text, placeholder: 'input your word...', controller: this.controller })
         .placeholderColor(Color.Grey)
         .placeholderFont({ size: 14, weight: 400 })
@@ -16,10 +17,14 @@ export struct TextBoxBar {
         .onChange((value: string) => {
           this.text = value
         })
-      Button("button2")
-        .type(ButtonType.Circle)
+      Button() {
+        Image($r('app.media.paperplane')).width(20).margin(10)
+      }
+      .type(ButtonType.Circle)
+
     }
     .width('100%')
     .justifyContent(FlexAlign.SpaceAround)
+    .padding({ top: 5, bottom: 5 })
   }
 }
