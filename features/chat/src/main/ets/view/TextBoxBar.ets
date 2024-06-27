@@ -1,4 +1,5 @@
 import { ChatMessageClass } from '../model/ChatMessageClass'
+import { ChatEngine } from '../utils/ERNIE-SPEED-8k'
 @Preview
 @Component
 export struct TextBoxBar {
@@ -25,9 +26,13 @@ export struct TextBoxBar {
         Image($r('app.media.paperplane')).width(20).margin(10)
       }
       .type(ButtonType.Circle)
-      .onClick(() => {
-        this.messageList.push(new ChatMessageClass(true, this.text))
+      .onClick(async () => {
+        console.log("there")
+        let tempText = this.text
+        this.messageList.push(new ChatMessageClass(true, tempText))
         this.text = ''
+        this.messageList.push(new ChatMessageClass(false, await ChatEngine(tempText)))
+        this.messageList.push(new ChatMessageClass(false, "FINISH"))
       })
     }
     .width('100%')

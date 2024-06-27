@@ -1,13 +1,8 @@
 import http from '@ohos.net.http'
-
 @Entry
 @Component
 struct ERNIE {
   @State text: string = '消息'
-
-  async aboutToAppear() {
-    this.text = await ChatEngine('30字介绍下北京');
-  }
 
   build() {
     Row() {
@@ -15,6 +10,8 @@ struct ERNIE {
         Text(this.text)
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
+        Button('click')
+          .onClick(async ()=> this.text = await ChatEngine('10个字介绍北京'))
       }
       .width('100%')
     }
@@ -24,7 +21,7 @@ struct ERNIE {
 
 let accessToken: string = '24.b7b957a3f4d8a88bf7ebebd75a8e9b6c.2592000.1722088120.282335-87989891'
 
-async function ChatEngine(chatText: string): Promise<string> {
+export async function ChatEngine(chatText: string): Promise<string> {
   return new Promise((resolve, reject) => {
     let httpReq = http.createHttp();
     httpReq.request("https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie_speed?access_token=" + accessToken,
