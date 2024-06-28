@@ -7,14 +7,19 @@ export default struct TripItem {
   onTripChange: (item: TripInfo) => void
 
   build() {
-    Row(){
-      if(this.item.finished){
+    Row() {
+      if (this.item.finished) {
         Text(this.item.name)
+          .fontSize(20)
+          .maxLines(1)
           .finishedTrip()
-      }else{
+      } else {
         Text(this.item.name)
+          .fontSize(20)
+          .maxLines(1)
       }
       Checkbox()
+        .height(20)
         .select(this.item.finished)
         .onChange(async val => {
           // 1.更新当前任务状态
@@ -34,16 +39,16 @@ export default struct TripItem {
 }
 
 // 任务完成样式
-@Extend(Text) function finishedTrip(){
-  .decoration({type:TextDecorationType.LineThrough})
+@Extend(Text) function finishedTrip() {
+  .decoration({ type: TextDecorationType.LineThrough })
   .fontColor('#B1B2B1')
 }
 
 // 统一的卡片样式
-@Styles function card(){
+@Styles function card() {
   .width('95%')
-  .padding(20)
+  .padding({ top: 15, bottom: 15, left: 20, right: 20 })
   .backgroundColor(Color.White)
-  .borderRadius(15)
-  .shadow({radius: 6, color: '#1F000000', offsetX: 2, offsetY: 4})
+  .borderRadius(20)
+  .shadow({ radius: 6, color: '#1F000000', offsetX: 2, offsetY: 4 })
 }

@@ -8,13 +8,11 @@ export struct TripPage {
   @State finishTrip: number = 0
 
   build() {
-    Column({space: 10}){
-      // 1.顶部导航
-      // Header()
-      // 2.任务进度卡片
-      TripStatistics({totalTrip: this.totalTrip, finishTrip: this.finishTrip})
-      // 3.任务列表
-      TripList({totalTrip: $totalTrip, finishTrip: $finishTrip})
+    Column({ space: 10 }) {
+      // 旅行进度卡片
+      TripStatistics({ totalTrip: this.totalTrip, finishTrip: this.finishTrip }).margin({ left: 20, right: 20 })
+      // 旅行列表
+      TripList({ totalTrip: $totalTrip, finishTrip: $finishTrip })
     }
     .width('100%')
     .height('100%')
