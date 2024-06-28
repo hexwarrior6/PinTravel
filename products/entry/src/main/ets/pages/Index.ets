@@ -1,4 +1,6 @@
 import { ChatPage } from '@ohos/chat';
+import { MapPage } from '@ohos/map';
+import { TripPage } from '@ohos/trip';
 
 @Entry
 @Component
@@ -10,8 +12,8 @@ struct Index {
   tabBarBuilder(title: string, targetIndex: number, selectedIcon: Resource, unselectIcon: Resource) {
     Column() {
       Image(this.currentIndex === targetIndex ? selectedIcon : unselectIcon)
-        .width(26)
-        .height(26)
+        .width(28)
+        .height(28)
       Text(title)
         .fontFamily('HarmonyHeiTi-Medium')
         .fontSize(12)
@@ -33,17 +35,17 @@ struct Index {
   build() {
     Tabs({ barPosition: BarPosition.End, controller: this.tabsController }) {
       TabContent() {
-        // ChatPage()
+        TripPage()
       }
       .tabBar(this.tabBarBuilder('行程', 0, $r('app.media.calendar_fill'), $r('app.media.calendar')))
 
       TabContent() {
         ChatPage()
       }
-      .tabBar(this.tabBarBuilder('对话', 1, $r('app.media.house_fill'), $r('app.media.house')))
+      .tabBar(this.tabBarBuilder('对话', 1, $r('app.media.ellipsis_message_fill'), $r('app.media.ellipsis_message')))
 
       TabContent() {
-        // KnowledgeMap()
+        MapPage()
       }
       .tabBar(this.tabBarBuilder('地图', 2, $r('app.media.satellite_map_fill'), $r('app.media.satellite_map')))
 

@@ -1,1 +1,1 @@
-export { MainPage } from './src/main/ets/components/mainpage/MainPage'
+export { TripPage } from './src/main/ets/pages/TripPage'

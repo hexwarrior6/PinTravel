@@ -1,6 +1,6 @@
 import { ChatMessageClass } from '../model/ChatMessageClass';
-import { ChatMessageList } from '../view/ChatMessageList';
-import { TextBoxBar } from '../view/TextBoxBar';
+import { ChatMessageList } from '../views/ChatMessageList';
+import { TextBoxBar } from '../views/TextBoxBar';
 
 @Preview
 @Component

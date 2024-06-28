@@ -1,10 +1,15 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
+import TripModel from '@ohos/trip/src/main/ets/model/TripModel';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want, launchParam) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    // 加载Preferences
+    // await PreferencesUtil.loadPreference(this.context, 'MyPreferences')
+    // 初始化Trip表数据库
+    TripModel.initTripDB(this.context)
   }
 
   onDestroy() {
