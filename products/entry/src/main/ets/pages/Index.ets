@@ -1,6 +1,7 @@
 import { ChatPage } from '@ohos/chat';
 import { MapPage } from '@ohos/map';
 import { TripPage } from '@ohos/trip';
+import { SettingPage } from '@ohos/settings';
 
 @Entry
 @Component
@@ -50,7 +51,7 @@ struct Index {
       .tabBar(this.tabBarBuilder('地图', 2, $r('app.media.satellite_map_fill'), $r('app.media.satellite_map')))
 
       TabContent() {
-        // KnowledgeMap()
+        SettingPage()
       }
       .tabBar(this.tabBarBuilder('设置', 3, $r('app.media.square_fill_grid_2x2'), $r('app.media.square_grid_2x2')))
     }
