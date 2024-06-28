@@ -10,14 +10,14 @@ struct Index {
   tabBarBuilder(title: string, targetIndex: number, selectedIcon: Resource, unselectIcon: Resource) {
     Column() {
       Image(this.currentIndex === targetIndex ? selectedIcon : unselectIcon)
-        .width(24)
-        .height(24)
+        .width(26)
+        .height(26)
       Text(title)
         .fontFamily('HarmonyHeiTi-Medium')
-        .fontSize(10)
+        .fontSize(12)
         .fontColor(this.currentIndex === targetIndex ? '#0A59F7' : 'rgba(0,0,0,0.60)')
         .textAlign(TextAlign.Center)
-        .lineHeight(14)
+        .lineHeight(16)
         .fontWeight(500)
     }
     .width('100%')
@@ -59,6 +59,6 @@ struct Index {
     //   color: '#0D182431'
     // })
     .backgroundColor('#F1F3F5')
-    .padding({ top: 36, bottom: 28 })
+    .padding({ top: 10, bottom: 10 })
   }
 }

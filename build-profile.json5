@@ -3,14 +3,15 @@
     "signingConfigs": [
       {
         "name": "default",
+        "type": "HarmonyOS",
         "material": {
-          "certpath": "C:\\Users\\HexWarrior6\\.ohos\\config\\openharmony\\auto_ohos_default_PinTravel_com.example.pintravel.cer",
-          "storePassword": "0000001B1EE2709BD3D165F84E13A9566C40D22761C0E8485F85AB2CC8838511ECA982BD57837E76537D02",
+          "certpath": "C:\\Users\\HexWarrior6\\.ohos\\config\\auto_debug_PinTravel_com.example.pintravel_420086000108913507.cer",
+          "storePassword": "0000001B640AD5CE21AA885C4839497201412EC9E065019431DBD827F3684FCD2431F42302FA9E3E70E42C",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B2BA1C75704095ABF091BF199E85FE97725DA39782D007A39D6F19E352B07D05830B4FE40923DD7",
-          "profile": "C:\\Users\\HexWarrior6\\.ohos\\config\\openharmony\\auto_ohos_default_PinTravel_com.example.pintravel.p7b",
+          "keyPassword": "0000001BE423F80CA7130D15ED54F7430A7EF82BCD40B3831C183FED34F2380CE745F752B67B7E206630AE",
+          "profile": "C:\\Users\\HexWarrior6\\.ohos\\config\\auto_debug_PinTravel_com.example.pintravel_420086000108913507.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\HexWarrior6\\.ohos\\config\\openharmony\\auto_ohos_default_PinTravel_com.example.pintravel.p12"
+          "storeFile": "C:\\Users\\HexWarrior6\\.ohos\\config\\auto_debug_PinTravel_com.example.pintravel_420086000108913507.p12"
         }
       }
     ],

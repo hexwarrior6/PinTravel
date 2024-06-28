@@ -5,7 +5,7 @@ import { TextBoxBar } from '../view/TextBoxBar';
 @Preview
 @Component
 export struct ChatPage {
-  @Provide messageList: Array<ChatMessageClass> = [new ChatMessageClass(false, "nihao")]
+  @Provide messageList: Array<ChatMessageClass> = [new ChatMessageClass(false, "你好，我是你的行程规划管家，请问有什么需要帮助的")]
   build() {
     Column() {
       Text('Pin📍')

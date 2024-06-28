@@ -47,9 +47,9 @@ struct ChatMessageItem {
             .borderRadius(16)
             .objectFit(ImageFit.Cover)
         }
-        .borderRadius({ topLeft: 10, topRight: 10, bottomLeft: 10 })
+        .borderRadius({ topLeft: 15, topRight: 15, bottomLeft: 15 })
         .backgroundColor('#bad7df')
-        .padding({ top: 0, bottom: 5, left: 10, right: 10 })
+        .padding({ top: 5, bottom: 10, left: 10, right: 10 })
         .alignItems(VerticalAlign.Top)
         .justifyContent(FlexAlign.End)
       }
@@ -66,9 +66,9 @@ struct ChatMessageItem {
           .borderRadius(16)
           .objectFit(ImageFit.Cover)
       }
-      .borderRadius({ topLeft: 10, topRight: 10, bottomRight: 10 })
+      .borderRadius({ topLeft: 15, topRight: 15, bottomRight: 15 })
       .backgroundColor('#ffe2e2')
-      .padding({ top: 0, bottom: 5, left: 10, right: 10 })
+      .padding({ top: 5, bottom: 10, left: 10, right: 10 })
       .alignItems(VerticalAlign.Top)
       .justifyContent(FlexAlign.Start)
     }

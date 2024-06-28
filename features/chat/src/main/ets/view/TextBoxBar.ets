@@ -11,29 +11,30 @@ export struct TextBoxBar {
 
   build() {
     Row() {
-      TextInput({ text: this.text, placeholder: 'input your word...', controller: this.controller })
+      TextInput({ text: this.text, placeholder: '点按以开始聊天', controller: this.controller })
         .placeholderColor(Color.Grey)
-        .placeholderFont({ size: 14, weight: 400 })
+        .placeholderFont({ size: 18, weight: 400 })
         .caretColor(Color.Blue)
-        .width(280)
-        .height(40)
-        .fontSize(14)
+        .width(300)
+        .height(50)
+        .fontSize(18)
         .fontColor(Color.Black)
         .onChange((value: string) => {
           this.text = value
           console.log(value)
         })
       Button() {
-        Image($r('app.media.paperplane')).width(20).margin(10)
+        Image($r('app.media.paperplane')).width(25).margin(10)
       }
-      .margin({ left: 5 })
+      .margin({ left: 20 })
       .type(ButtonType.Circle)
       .onClick(async () => {
-        console.log("there")
-        let tempText = this.text
-        this.messageList.push(new ChatMessageClass(true, tempText))
-        this.text = ''
-        this.messageList.push(new ChatMessageClass(false, await ChatEngine(tempText)))
+        if (this.text != '') {
+          let tempText = this.text
+          this.messageList.push(new ChatMessageClass(true, tempText))
+          this.text = ''
+          this.messageList.push(new ChatMessageClass(false, await ChatEngine(tempText)))
+        }
       })
     }
     .width('100%')
