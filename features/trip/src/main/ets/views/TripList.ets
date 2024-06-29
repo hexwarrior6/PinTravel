@@ -45,7 +45,6 @@ export default struct TripList {
         this.dialogController.close()
       })
       .catch(error => console.log('testTag', '新增行程失败：', name, JSON.stringify(error)))
-
   }
 
   build() {

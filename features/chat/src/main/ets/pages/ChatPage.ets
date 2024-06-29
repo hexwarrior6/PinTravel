@@ -1,21 +1,16 @@
 import { ChatMessageClass } from '../model/ChatMessageClass';
 import { ChatMessageList } from '../views/ChatMessageList';
+import { Header } from '../views/Header';
 import { TextBoxBar } from '../views/TextBoxBar';
 
 @Preview
 @Component
 export struct ChatPage {
-  @Provide messageList: Array<ChatMessageClass> = [new ChatMessageClass(false, "你好，我是你的行程规划管家，请问有什么需要帮助的")]
+  @Provide chatMessages: Array<ChatMessageClass> = []
+
   build() {
     Column() {
-      Text('Pin📍')
-        .fontSize(24)
-        .fontWeight('700')
-        .width('100%')
-        .textAlign(TextAlign.Center)
-        .padding({ left: 16 })
-        .fontFamily('HarmonyHeiTi-Bold')
-        .lineHeight(33)
+      Header()
       Scroll() {
         ChatMessageList()
       }

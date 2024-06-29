@@ -1,12 +1,12 @@
 @Observed
 export class ChatMessageClass {
-  isme: Boolean = true;
-  text?: string = '';
-  imageSrc?: string = '';
+  id: number
+  role: string = '';
+  content?: string = '';
 
-  constructor(isme: Boolean, text?: string, imageSrc?: string) {
-    this.isme = isme;
-    this.text = text;
-    this.imageSrc = imageSrc;
+  constructor(id: number, role: string, text?: string) {
+    this.id = id;
+    this.role = role;
+    this.content = text;
   }
 }

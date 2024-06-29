@@ -1,10 +1,9 @@
 import { ChatMessageClass } from '../model/ChatMessageClass';
+import ChatMessageModel from '../model/ChatMessageModel';
 
 @Preview
 @Component
 export struct ChatMessageList {
-  @Consume messageList: Array<ChatMessageClass>
-
   // aboutToAppear(): void {
   //   this.getTutorialDataFromJSON();
   // }
@@ -15,16 +14,25 @@ export struct ChatMessageList {
   //   })
   // }
 
+  @Consume chatMessages: Array<ChatMessageClass>
+
+  aboutToAppear() {
+    console.log('testTag', '初始化组件，查询行程列表')
+    ChatMessageModel.getChatMessageList()
+      .then(chatMessages => {
+        this.chatMessages = chatMessages
+      })
+  }
+
   build() {
     List({ space: 12 }) {
-      ForEach(this.messageList, (item: ChatMessageClass) => {
+      ForEach(this.chatMessages, (item: ChatMessageClass) => {
         ListItem() {
           ChatMessageItem({ chatMessageItem: item })
-            .padding({left:10, right:10})
+            .padding({ left: 10, right: 10 })
         }
       })
     }
-    // .alignListItem(ListItemAlign.Start)
     .padding({ top: 10, left: 16, right: 16 })
   }
 }
@@ -35,17 +43,14 @@ struct ChatMessageItem {
   @ObjectLink chatMessageItem: ChatMessageClass;
 
   build() {
-    if (this.chatMessageItem.isme) {
+    if (this.chatMessageItem.role == 'user') {
       Row() {
         Row() {
-          Text(this.chatMessageItem.text)
+          Text(this.chatMessageItem.content)
             .fontSize(18)
             .textAlign(TextAlign.Start)
             .fontWeight(400)
             .margin({ top: 4 })
-          Image($r(this.chatMessageItem.imageSrc))
-            .borderRadius(16)
-            .objectFit(ImageFit.Cover)
         }
         .borderRadius({ topLeft: 15, topRight: 15, bottomLeft: 15 })
         .backgroundColor('#bad7df')
@@ -57,14 +62,11 @@ struct ChatMessageItem {
       .justifyContent(FlexAlign.End)
     } else {
       Row() {
-        Text(this.chatMessageItem.text)
+        Text(this.chatMessageItem.content)
           .fontSize(18)
           .textAlign(TextAlign.Start)
           .fontWeight(400)
           .margin({ top: 4 })
-        Image($r(this.chatMessageItem.imageSrc))
-          .borderRadius(16)
-          .objectFit(ImageFit.Cover)
       }
       .borderRadius({ topLeft: 15, topRight: 15, bottomRight: 15 })
       .backgroundColor('#ffe2e2')

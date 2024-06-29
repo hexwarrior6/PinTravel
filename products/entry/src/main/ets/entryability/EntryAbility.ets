@@ -1,6 +1,7 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
+import ChatMessageModel from '@ohos/chat/src/main/ets/model/ChatMessageModel';
 import TripModel from '@ohos/trip/src/main/ets/model/TripModel';
 
 export default class EntryAbility extends UIAbility {
@@ -10,6 +11,7 @@ export default class EntryAbility extends UIAbility {
     // await PreferencesUtil.loadPreference(this.context, 'MyPreferences')
     // 初始化Trip表数据库
     TripModel.initTripDB(this.context)
+    ChatMessageModel.initChatMessageDB(this.context)
   }
 
   onDestroy() {
