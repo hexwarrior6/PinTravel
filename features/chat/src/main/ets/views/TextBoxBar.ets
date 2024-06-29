@@ -38,7 +38,7 @@ export struct TextBoxBar {
       .width('100%')
 
       Row() {
-        TextInput({ text: this.text, placeholder: '点按以开始聊天', controller: this.controller })
+        TextInput({ text: this.text, placeholder: '请和我对话以创建行程', controller: this.controller })
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 18, weight: 400 })
           .caretColor(Color.Blue)
