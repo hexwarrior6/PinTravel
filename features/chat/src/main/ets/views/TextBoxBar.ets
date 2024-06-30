@@ -33,7 +33,7 @@ export struct TextBoxBar {
           .FloatButton()
           .fontColor(Color.Gray)
       }
-      .margin({ left: 5, bottom: 5 })
+      .margin({ left: 5, bottom: 5, top: 5 })
       .justifyContent(FlexAlign.SpaceEvenly)
       .width('100%')
 

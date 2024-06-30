@@ -1,4 +1,5 @@
 import http from '@ohos.net.http'
+
 @Entry
 @Component
 struct ERNIE {
@@ -11,7 +12,7 @@ struct ERNIE {
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
         Button('click')
-          .onClick(async ()=> this.text = await ChatEngine('10个字介绍北京'))
+          .onClick(async () => this.text = await ChatEngine('10个字介绍北京'))
       }
       .width('100%')
     }
@@ -39,23 +40,26 @@ export async function ChatEngine(chatText: string): Promise<string> {
               "role": "user",
               "content": chatText
             }
-          ]
+          ],
+          "system": "你是一个旅行规划大师，你需要提供给用户专业的旅行规划指南  任务目标：根据我的需求帮助我制定详细的旅行计划，包括行程安排、费用预算、小贴士等。  背景信息：必须尊重我的时间、预算，偏好。  输入数据：输入你想去的目的地、出发地、交通方式、时间、预算、偏好及其它需求，我会根据信息给你制定一个完美的旅行规划。",
         },
-        connectTimeout: 60000, // 可选，默认为60s
-        readTimeout: 60000, // 可选，默认为60s
-      },
-      (err, data) => {
-        if (!err) {
-          if (data.responseCode === 200) { // 假设200是成功的响应码
-            let result = JSON.parse(`${data.result}`).result;
-            resolve(result); // 使用Promise的resolve方法返回结果
-          } else {
-            reject(new Error('HTTP请求成功但返回了错误代码: ' + data.responseCode));
-          }
+      connectTimeout: 60000, // 可选，默认为60s
+      readTimeout: 60000, // 可选，默认为60s
+  },
+    (err, data) => {
+      if (!err) {
+        if (data.responseCode === 200) { // 假设200是成功的响应码
+          let result = JSON.parse(`${data.result}`).result;
+          resolve(result); // 使用Promise的resolve方法返回结果
         } else {
-          reject(err); // 使用Promise的reject方法处理错误
+          reject(new Error('HTTP请求成功但返回了错误代码: ' + data.responseCode));
         }
+      } else {
+        reject(err); // 使用Promise的reject方法处理错误
       }
-    );
-  });
+    }
+  );
+}
+
+);
 }
