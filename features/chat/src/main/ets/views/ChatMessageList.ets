@@ -4,15 +4,6 @@ import ChatMessageModel from '../model/ChatMessageModel';
 @Preview
 @Component
 export struct ChatMessageList {
-  // aboutToAppear(): void {
-  //   this.getTutorialDataFromJSON();
-  // }
-  //
-  // getTutorialDataFromJSON() {
-  //   getContext(this).resourceManager.getRawFileContent('TutorialData.json').then(value => {
-  //     this.tutorialList = JSON.parse(bufferToString(value.buffer)) as ArticleClass[];
-  //   })
-  // }
 
   @Consume chatMessages: Array<ChatMessageClass>
 

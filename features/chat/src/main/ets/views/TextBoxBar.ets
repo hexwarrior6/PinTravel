@@ -38,11 +38,16 @@ export struct TextBoxBar {
       .width('100%')
 
       Row() {
+        Button() {
+          Image($r('app.media.mic_fill')).width(25).margin(10)
+        }
+        .margin({ right: 20 })
+        .type(ButtonType.Circle)
         TextInput({ text: this.text, placeholder: '请和我对话以创建行程', controller: this.controller })
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 18, weight: 400 })
           .caretColor(Color.Blue)
-          .width(300)
+          .width(250)
           .height(50)
           .fontSize(18)
           .fontColor(Color.Black)
@@ -51,7 +56,7 @@ export struct TextBoxBar {
             console.log(value)
           })
         Button() {
-          Image($r('app.media.paperplane')).width(25).margin(10)
+          Image($r('app.media.paperplane_right_fill')).width(25).margin(10)
         }
         .margin({ left: 20 })
         .type(ButtonType.Circle)
