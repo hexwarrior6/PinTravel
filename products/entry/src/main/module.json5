@@ -3,6 +3,16 @@
     "requestPermissions":[
       {
         "name": "ohos.permission.INTERNET" // 网络请求
+      },
+      {
+        "name": "ohos.permission.MICROPHONE",
+        "reason": "$string:record_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        },
       }
     ],
     "name": "entry",

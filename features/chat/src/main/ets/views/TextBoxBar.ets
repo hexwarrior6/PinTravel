@@ -1,17 +1,18 @@
 import { ChatMessageClass } from '../model/ChatMessageClass'
 import ChatMessageModel from '../model/ChatMessageModel'
 import { ChatEngine } from '../utils/ERNIE-SPEED-8k'
+import { speechRecognizeButton } from './speechRecognizeButton'
 
 @Preview
 @Component
 export struct TextBoxBar {
   @Consume chatMessages: Array<ChatMessageClass>
+  @Consume speechResult: string
   @Provide chatText: string = ''
   @State text: string = ''
   controller: TextInputController = new TextInputController()
 
   handleAddChatMessage(role: string, name: string) {
-    // 1.新增任务
     ChatMessageModel.addChatMessage(role, name)
       .then(id => {
         // 回显到数组页面
@@ -38,11 +39,7 @@ export struct TextBoxBar {
       .width('100%')
 
       Row() {
-        Button() {
-          Image($r('app.media.mic_fill')).width(25).margin(10)
-        }
-        .margin({ right: 20 })
-        .type(ButtonType.Circle)
+        speechRecognizeButton()
         TextInput({ text: this.text, placeholder: '请和我对话以创建行程', controller: this.controller })
           .placeholderColor(Color.Grey)
           .placeholderFont({ size: 18, weight: 400 })
