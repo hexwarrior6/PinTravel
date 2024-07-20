@@ -7,7 +7,7 @@ import { speechRecognizeButton } from './speechRecognizeButton'
 @Component
 export struct TextBoxBar {
   @Consume chatMessages: Array<ChatMessageClass>
-  @Consume speechResult: string
+  speechResult: string
   @Provide chatText: string = ''
   @State text: string = ''
   controller: TextInputController = new TextInputController()

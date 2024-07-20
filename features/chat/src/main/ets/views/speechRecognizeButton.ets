@@ -15,8 +15,8 @@ const context = getContext(this) as common.UIAbilityContext;
 @Entry
 @Component
 export struct speechRecognizeButton {
-  @State recordBtnImage: string = 'mic_fill.svg'
-  @Provide speechResult: string = ''
+  @State recordBtnImage: string = 'mic.svg'
+  @State speechResult: string = ''
   private recordedData: ArrayBuffer
   // 录音器
   private audioCapture?: AudioCapture;
