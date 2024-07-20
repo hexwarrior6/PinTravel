@@ -1,6 +1,7 @@
 import TripInfo from '../model/TripInfo'
 import TripItem from './TripItem'
 import TripModel from '../model/TripModel'
+import router from '@ohos.router'
 
 @Component
 export default struct TripList {

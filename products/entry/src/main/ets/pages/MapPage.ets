@@ -1,13 +1,16 @@
 import webview from '@ohos.web.webview';
-// https://map.baidu.com/mobile/webapp/search/search/qt=s&da_src=shareurl&wd=杭州东站
+import router from '@ohos.router';
 
+@Entry
 @Component
 export struct MapPage {
   private webviewController: webview.WebviewController = new webview.WebviewController();
+  @State params: any = router.getParams()
+
 
   build() {
     Column() {
-      Web({ src: 'https://map.baidu.com/mobile/webapp/index/index/#index/index/foo=bar/vt=map', controller: this.webviewController })
+      Web({ src: 'https://map.baidu.com/mobile/webapp/search/search/qt=s&da_src=shareurl&wd=' + this.params.name, controller: this.webviewController })
         .domStorageAccess(true)
     }
   }

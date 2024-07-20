@@ -1,5 +1,6 @@
 import TripModel from '../model/TripModel'
 import TripInfo from '../model/TripInfo'
+import router from '@ohos.router'
 
 @Component
 export default struct TripItem {
@@ -35,6 +36,21 @@ export default struct TripItem {
     }
     .card()
     .justifyContent(FlexAlign.SpaceBetween)
+    .onClick(() => {
+      // router跳转
+      router.pushUrl(
+        {
+          url: 'pages/MapPage',
+          params: { name: this.item.name }
+        },
+        router.RouterMode.Single,
+        err => {
+          if (err) {
+            console.log(`路由失败，errCode: ${err.code} errMsg:${err.message}`)
+          }
+        }
+      )
+    })
   }
 }
 
