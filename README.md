@@ -49,7 +49,7 @@
 
 ![PinTravel_Showcase.png](./PinTravel_Showcase.png)
 
-
+https://github.com/user-attachments/assets/0c95d9ee-c56c-41b6-90d2-09d4d3fbf37a
 
 ## 🚀 功能特性
 
